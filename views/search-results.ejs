@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <a href="/">Back</a>
+
+    <dl>
+        <% searchResults.forEach(result=>{ %>
+            <dt><%= result.title %></dt>
+            <dd>
+                <ul>
+                    <li>Rating: <%= result.rating %></li>
+                    <li>Year: <%= result.year %></li>
+                    <li>Actors: <ul>
+                        <li><%= result.actors[0] %></li>
+                        <li><%= result.actors[1] %></li>
+                    </ul></li>
+                </ul>
+            </dd>
+        <% })%>
+    </dl>
+    
+</body>
+</html>

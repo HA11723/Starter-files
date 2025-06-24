@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Show Databases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CPSC 2600 TV Show Database</h1>
+
+    <p class="message"><%= message %></p>
+
+    <h2>Add a New TV Show to the Database</h2>
+    
+    <form action="/tv-shows" method="POST">
+        <label>
+            Name of show:
+            <input type="text" name="title" required>
+        </label>
+        <label>
+            Year of first episode:
+            <input type="number" name="year" min="1900" max="2025" required>
+        </label>
+        <label>
+            Rating:
+            <input type="number" name="rating" min="0" max="5" required>
+        </label>
+        <fieldset>
+            <legend>Top actors</legend>
+            <label>
+                First top actor
+                <input type="text" name="firstActor" required>
+            </label>
+            <label>
+                Second top actor
+                <input type="text" name="secondActor" required>
+            </label>
+        </fieldset>
+        <button>Submit</button>
+    </form>
+
+    <h2>Search for Shows in the Database</h2>
+
+    <form action="/tv-shows" method="GET">
+        <label>
+            By title:
+            <input type="text" name="title">
+        </label>
+        <button>Search</button>
+    </form>
+    <form action="/tv-shows" method="GET">
+        <fieldset>
+            <legend> By date range:</legend>
+            <label>
+                From
+                <input type="text" name="rangeStart" min="1900" max="2025">
+            </label>
+            <label>
+                To
+                <input type="text" name="rangeEnd" min="1900" max="2025">
+            </label>
+        </fieldset>
+        <button>Search</button>
+    </form>
+    <form action="/tv-shows" method="GET">
+        <label>
+            By actor:
+            <input type="text" name="actor">
+        </label>  
+        <button>Search</button>
+    </form>    
+</body>
+</html>
